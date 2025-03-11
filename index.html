@@ -4,79 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majlis Bertandang Irfan & Aina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { text-align: center; background-color: #f8f9fa; margin: 0; padding: 20px; font-family: Arial, sans-serif; }
-        h1 { color: #d63384; }
-        iframe, video { max-width: 80%; border-radius: 10px; margin-top: 20px; }
-        .section { margin-top: 40px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
-        input, select, textarea, button { margin-top: 10px; padding: 10px; width: 80%; max-width: 400px; }
-        button { background-color: #d63384; color: white; border: none; cursor: pointer; }
-        #guestbook-messages { margin-top: 20px; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto; background: #fff; padding: 10px; border-radius: 10px; box-shadow: 0px 0px 5px rgba(0,0,0,0.1); }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; }
+        header { text-align: center; padding: 20px; background: #d63384; color: white; font-size: 24px; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        section { padding: 60px 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; }
+        .btn { display: inline-block; padding: 10px 20px; background: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; }
+        .video-container { margin-top: 80px; }
+        iframe, video { width: 100%; max-width: 600px; border-radius: 10px; }
+        .countdown { font-size: 24px; font-weight: bold; color: #d63384; margin-top: 10px; }
+        .form-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        input, select, textarea, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ddd; }
+        button { background-color: #d63384; color: white; cursor: pointer; }
+        .messages { background: white; padding: 10px; border-radius: 10px; box-shadow: 0px 0px 5px rgba(0,0,0,0.1); text-align: left; }
         .message { border-bottom: 1px solid #ddd; padding: 5px 0; }
+        .qr-code img { width: 200px; }
     </style>
 </head>
 <body>
-    <h1>Majlis Bertandang Irfan & Aina</h1>
+    <header>Majlis Bertandang Irfan & Aina</header>
+
+    <section class="video-container">
+        <div class="container">
+            <iframe src="https://drive.google.com/file/d/1z9_6nbdyqxiEEEJCbVU6a7wdLscAGCtW/preview" allow="autoplay"></iframe>
+        </div>
+    </section>
     
-    <!-- Video Invitation -->
-    <iframe src="https://drive.google.com/file/d/1z9_6nbdyqxiEEEJCbVU6a7wdLscAGCtW/preview" width="80%" height="400" allow="autoplay"></iframe>
-    
-    <!-- Countdown Timer -->
-    <div class="section">
+    <section>
         <h2>Countdown to Our Special Day</h2>
-        <p id="countdown"></p>
-    </div>
+        <p class="countdown" id="countdown"></p>
+    </section>
     
-    <!-- RSVP Form -->
-    <div class="section">
+    <section>
         <h2>RSVP</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required><br>
-            <select required>
-                <option value="">Will you attend?</option>
-                <option value="yes">Yes, I will attend</option>
-                <option value="no">No, I can't make it</option>
-            </select><br>
-            <input type="number" placeholder="Number of Guests (Per Family)" required><br>
-            <button type="submit">Submit RSVP</button>
-        </form>
-    </div>
+        <div class="form-container">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <select required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">Yes, I will attend</option>
+                    <option value="no">No, I can't make it</option>
+                </select>
+                <input type="number" placeholder="Number of Guests (Per Family)" required>
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div>
+    </section>
     
-    <!-- Guestbook -->
-    <div class="section">
+    <section>
         <h2>Guestbook</h2>
-        <textarea id="guest-message" placeholder="Leave a message"></textarea><br>
-        <button onclick="addMessage()">Submit Message</button>
-        <div id="guestbook-messages"></div>
-    </div>
+        <div class="form-container">
+            <textarea id="guest-message" placeholder="Leave a message"></textarea>
+            <button onclick="addMessage()">Submit Message</button>
+            <div class="messages" id="guestbook-messages"></div>
+        </div>
+    </section>
     
-    <!-- Location Map -->
-    <div class="section">
+    <section>
         <h2>Venue Location</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0" width="80%" height="300" allowfullscreen></iframe>
-    </div>
+    </section>
     
-    <!-- Money Gift -->
-    <div class="section">
+    <section>
         <h2>Send a Gift</h2>
-        <p>Scan the QR code below to send your gift:</p>
-        <img src="your-qr-code-image-url.png" alt="Bank QR Code" width="200">
-    </div>
+        <div class="qr-code">
+            <p>Scan the QR code below to send your gift:</p>
+            <img src="your-qr-code-image-url.png" alt="Bank QR Code">
+        </div>
+    </section>
     
     <script>
-        // Countdown Timer Script
         function countdown() {
             const weddingDate = new Date("2025-05-11T00:00:00").getTime();
             const now = new Date().getTime();
             const timeLeft = weddingDate - now;
-            
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             document.getElementById("countdown").innerText = `${days} days to go!`;
         }
         countdown();
         setInterval(countdown, 86400000);
-        
-        // Guestbook Message Submission
+
         function addMessage() {
             const message = document.getElementById("guest-message").value;
             if (message.trim() !== "") {
