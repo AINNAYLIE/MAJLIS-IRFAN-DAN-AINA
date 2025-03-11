@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majlis Bertandang Irfan & Aina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -12,165 +12,77 @@
             padding: 0;
             background: url('https://github.com/AINNAYLIE/MAJLIS-IRFAN-DAN-AINA/blob/main/Brown%20and%20Yellow%20Aesthetic%20Elegant%20Wedding%20Invitation%20Mobile%20Video.png?raw=true') no-repeat center center fixed;
             background-size: cover;
-            color: #3D1C00;
+            color: #5a2a27;
         }
-
         header {
             text-align: center;
             padding: 20px;
-            background: rgba(214, 51, 132, 0.8);
+            background: rgba(214, 51, 132, 0.9);
             color: white;
-            font-size: 30px;
-            font-family: 'Great Vibes', cursive;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
         }
-
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #D63384;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .video-container {
-            margin-top: 100px;
-        }
-
-        iframe, video {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 10px;
-        }
-
-        .countdown {
-            font-size: 28px;
-            font-weight: bold;
-            color: #D63384;
-            margin-top: 10px;
-        }
-
-        .form-container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-
-        input, select, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        button {
-            background-color: #D63384;
-            color: white;
-            cursor: pointer;
-        }
-
-        .messages {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-            text-align: left;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .message {
-            border-bottom: 1px solid #ddd;
-            padding: 5px 0;
-        }
-
-        .qr-code img {
-            width: 200px;
-        }
+        section { padding: 60px 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; }
+        .btn { display: inline-block; padding: 10px 20px; background: #d63384; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; }
+        iframe, video { width: 100%; max-width: 600px; border-radius: 10px; }
+        .countdown { font-size: 24px; font-weight: bold; color: #d63384; margin-top: 10px; }
+        .form-container, .messages { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        input, select, textarea, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ddd; }
+        button { background-color: #d63384; color: white; cursor: pointer; }
+        .qr-code img { width: 200px; }
     </style>
 </head>
 <body>
     <header>Majlis Bertandang Irfan & Aina</header>
-
-    <section class="video-container">
-        <div class="container">
-            <iframe src="https://drive.google.com/file/d/1z9_6nbdyqxiEEEJCbVU6a7wdLscAGCtW/preview" allow="autoplay"></iframe>
-        </div>
+    <section class="container">
+        <h2>Video Jemputan</h2>
+        <iframe src="https://drive.google.com/file/d/1z9_6nbdyqxiEEEJCbVU6a7wdLscAGCtW/preview" allow="autoplay"></iframe>
     </section>
-    
-    <section>
-        <h2>Countdown to Our Special Day</h2>
+    <section class="container">
+        <h2>Countdown</h2>
         <p class="countdown" id="countdown"></p>
     </section>
-    
-    <section>
+    <section class="container">
         <h2>RSVP</h2>
-        <div class="form-container">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <select required>
-                    <option value="">Will you attend?</option>
-                    <option value="yes">Yes, I will attend</option>
-                    <option value="no">No, I can't make it</option>
-                </select>
-                <input type="number" placeholder="Number of Guests (Per Family)" required>
-                <button type="submit">Submit RSVP</button>
-            </form>
-        </div>
+        <form>
+            <input type="text" placeholder="Nama Anda" required>
+            <select required>
+                <option value="">Kehadiran?</option>
+                <option value="yes">Ya, saya akan hadir</option>
+                <option value="no">Tidak dapat hadir</option>
+            </select>
+            <input type="number" placeholder="Jumlah Tetamu" required>
+            <button type="submit">Hantar RSVP</button>
+        </form>
     </section>
-    
-    <section>
+    <section class="container">
         <h2>Guestbook</h2>
-        <div class="form-container">
-            <textarea id="guest-message" placeholder="Leave a message"></textarea>
-            <button onclick="addMessage()">Submit Message</button>
-            <div class="messages" id="guestbook-messages"></div>
-        </div>
+        <textarea id="guest-message" placeholder="Tinggalkan ucapan"></textarea>
+        <button onclick="addMessage()">Hantar</button>
+        <div class="messages" id="guestbook-messages"></div>
     </section>
-    
-    <section>
-        <h2>Venue Location</h2>
+    <section class="container">
+        <h2>Lokasi Majlis</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0" width="80%" height="300" allowfullscreen></iframe>
     </section>
-    
-    <section>
-        <h2>Send a Gift</h2>
+    <section class="container">
+        <h2>Hadiah Wang</h2>
         <div class="qr-code">
-            <p>Scan the QR code below to send your gift:</p>
+            <p>Imbas QR code untuk memberi sumbangan:</p>
             <img src="your-qr-code-image-url.png" alt="Bank QR Code">
         </div>
     </section>
-    
     <script>
         function countdown() {
             const weddingDate = new Date("2025-05-11T00:00:00").getTime();
             const now = new Date().getTime();
             const timeLeft = weddingDate - now;
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerText = `${days} days to go!`;
+            document.getElementById("countdown").innerText = `${days} hari lagi!`;
         }
         countdown();
         setInterval(countdown, 86400000);
-
         function addMessage() {
             const message = document.getElementById("guest-message").value;
             if (message.trim() !== "") {
@@ -181,7 +93,6 @@
                 document.getElementById("guest-message").value = "";
             }
         }
-
         function displayMessages() {
             const messageContainer = document.getElementById("guestbook-messages");
             messageContainer.innerHTML = "";
