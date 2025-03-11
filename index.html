@@ -5,18 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majlis Bertandang Irfan & Aina</title>
     <style>
-        body { text-align: center; background-color: #f8f9fa; margin: 0; padding: 0; }
-        h1 { color: #d63384; font-family: Arial, sans-serif; padding-top: 20px; }
-        iframe { max-width: 80%; border-radius: 10px; margin-top: 20px; }
+        body { text-align: center; background-color: #f8f9fa; margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        h1 { color: #d63384; }
+        iframe, video { max-width: 80%; border-radius: 10px; margin-top: 20px; }
+        .section { margin-top: 40px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        input, textarea, button { margin-top: 10px; padding: 10px; width: 80%; max-width: 400px; }
+        button { background-color: #d63384; color: white; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
     <h1>Majlis Bertandang Irfan & Aina</h1>
-
-    <!-- Google Drive Video Embed -->
-    <iframe src="https://drive.google.com/file/d/1z9_6nbdyqxiEEEJCbVU6a7wdLscAGCtW/preview" 
-            width="80%" height="400" allow="autoplay">
-    </iframe>
-
+    
+    <!-- Video Invitation -->
+    <iframe src="https://drive.google.com/file/d/1z9_6nbdyqxiEEEJCbVU6a7wdLscAGCtW/preview" width="80%" height="400" allow="autoplay"></iframe>
+    
+    <!-- Countdown Timer -->
+    <div class="section">
+        <h2>Countdown to Our Special Day</h2>
+        <p id="countdown"></p>
+    </div>
+    
+    <!-- RSVP Form -->
+    <div class="section">
+        <h2>RSVP</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="number" placeholder="Number of Guests" required><br>
+            <button type="submit">Submit RSVP</button>
+        </form>
+    </div>
+    
+    <!-- Guestbook -->
+    <div class="section">
+        <h2>Guestbook</h2>
+        <textarea placeholder="Leave a message"></textarea><br>
+        <button>Submit Message</button>
+    </div>
+    
+    <!-- Location Map -->
+    <div class="section">
+        <h2>Venue Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0" width="80%" height="300" allowfullscreen></iframe>
+    </div>
+    
+    <!-- Money Gift -->
+    <div class="section">
+        <h2>Send a Gift</h2>
+        <p>You can send your gift to:</p>
+        <p><strong>Bank Name:</strong> Your Bank</p>
+        <p><strong>Account Number:</strong> 1234567890</p>
+    </div>
+    
+    <script>
+        // Countdown Timer Script
+        function countdown() {
+            const weddingDate = new Date("2025-06-01T00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerText = `${days} days to go!`;
+        }
+        countdown();
+        setInterval(countdown, 86400000);
+    </script>
 </body>
 </html>
